@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://assets/Core/Battler/stats_table.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+mhp = 64
+wait = 64
+spd = 8
+atk = 32
+def = 12
+acc = 0
+eva = 25
+atp = 1
+mvp = 1
+move = 6
+jump = 2
+data = {
+0: 6,
+1: 2,
+3: 64,
+4: 64,
+5: 8,
+6: 32,
+7: 12,
+9: 25,
+10: 1,
+11: 1
+}

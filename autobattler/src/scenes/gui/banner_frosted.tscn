@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 bg_color: hint_color;
+uniform sampler2D noise_pattern;
+uniform bool scroll_x;
+uniform bool scroll_y;
+uniform float speed;
+
+void fragment() {
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV, 2.0);	
+	COLOR = mix(color, bg_color, 0.4);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/bg_color = Color( 0.0431373, 0.0509804, 0.0705882, 1 )
+shader_param/scroll_x = null
+shader_param/scroll_y = null
+shader_param/speed = null
+
+[node name="Panel" type="Panel"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Characters/direction_arrow.gd" type="Script" id=1]
+[ext_resource path="res://assets/Art/arrow.png" type="Texture" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 1, 1 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type spatial;
+render_mode unshaded;
+uniform vec4 albedo : hint_color;
+uniform sampler2D texture_albedo : hint_albedo;
+
+uniform float speed = 1.5f;
+uniform float magnitude = 0.5f;
+uniform bool active = false;
+
+
+void vertex() {
+	if(active)
+	{
+		VERTEX = VERTEX * ( abs(sin(TIME*speed)) * magnitude + 1.0);
+	}
+}
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	
+	float alpha = 1.0f;
+	if(!active){
+		alpha = 0.5f;
+	}
+	ALPHA = albedo.a * albedo_tex.a * alpha;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/speed = 1.5
+shader_param/magnitude = 0.5
+shader_param/active = false
+shader_param/texture_albedo = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/speed = 1.5
+shader_param/magnitude = 0.5
+shader_param/active = false
+shader_param/texture_albedo = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=5]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/speed = 1.5
+shader_param/magnitude = 0.5
+shader_param/active = false
+shader_param/texture_albedo = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/speed = 1.5
+shader_param/magnitude = 0.5
+shader_param/active = false
+shader_param/texture_albedo = ExtResource( 2 )
+
+[node name="DirectionArrow" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0927023, 0 )
+script = ExtResource( 1 )
+
+[node name="South" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="East" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 4 )
+
+[node name="North" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 5 )
+
+[node name="West" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )

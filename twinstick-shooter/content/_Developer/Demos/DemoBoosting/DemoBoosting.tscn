@@ -1,0 +1,118 @@
+[gd_scene load_steps=18 format=3 uid="uid://csoabplmrleu3"]
+
+[ext_resource type="Script" path="res://_Developer/Demos/DemoBoosting/DemoBoosting.gd" id="1_3swiu"]
+[ext_resource type="Script" path="res://BadType/Core/Systems/VictoryConditions/SurvivalVictory.cs" id="2_fojsn"]
+[ext_resource type="PackedScene" uid="uid://d0skg0p3hshh0" path="res://BadType/Characters/PlayerCharacter.tscn" id="2_k8iw5"]
+[ext_resource type="Texture2D" uid="uid://f8i7muy321eg" path="res://BadType/Common/TDefault.svg" id="3_odme7"]
+[ext_resource type="Script" path="res://BadType/Core/Systems/VictoryConditions/KillVictory.cs" id="3_pq7ek"]
+[ext_resource type="Script" path="res://BadType/Core/Spawner/ProjectileSpawner.cs" id="4_pvtd8"]
+[ext_resource type="PackedScene" uid="uid://brfeh4tijsgs0" path="res://BadType/Weapons/Projectiles/Projectile.tscn" id="5_c76ll"]
+[ext_resource type="Script" path="res://BadType/Characters/Camera/Camera.cs" id="6_aro8c"]
+[ext_resource type="Texture2D" uid="uid://iuwpj08fl1di" path="res://icon.svg" id="7_yagei"]
+[ext_resource type="Script" path="res://BadType/Core/Common/Smoother.gd" id="8_6ebtm"]
+[ext_resource type="PackedScene" uid="uid://b4hogqnerhkgg" path="res://BadType/Levels/Demo/Level_Demo.tscn" id="10_ts786"]
+[ext_resource type="Script" path="res://BadType/Core/Systems/VictorySystem.cs" id="12_f8iqu"]
+[ext_resource type="Script" path="res://BadType/Core/Systems/DeathSystem.cs" id="13_fewqo"]
+[ext_resource type="Script" path="res://BadType/Core/Systems/HitSystem.cs" id="13_p7lkm"]
+[ext_resource type="Script" path="res://BadType/Core/Spawner/EnemySpawner.cs" id="14_8y2og"]
+[ext_resource type="Script" path="res://BadType/Core/Systems/DamageSystem.cs" id="14_hts3i"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_43k1g"]
+
+[node name="Main" type="Node"]
+
+[node name="VictorySystem" type="Node" parent="."]
+script = ExtResource("12_f8iqu")
+
+[node name="Survial" type="Node" parent="VictorySystem"]
+script = ExtResource("2_fojsn")
+
+[node name="Kill" type="Node" parent="VictorySystem"]
+script = ExtResource("3_pq7ek")
+Threshold = 1
+
+[node name="DeathSystem" type="Node" parent="."]
+script = ExtResource("13_fewqo")
+
+[node name="DamageSystem" type="Node" parent="."]
+script = ExtResource("14_hts3i")
+
+[node name="HitSystem" type="Node" parent="."]
+script = ExtResource("13_p7lkm")
+
+[node name="Field" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+script = ExtResource("1_3swiu")
+
+[node name="PlayerCharacterBase" parent="Field" instance=ExtResource("2_k8iw5")]
+unique_name_in_owner = true
+ChargeRate = 1.0
+ChargeMax = 4.0
+
+[node name="Weapon" parent="Field/PlayerCharacterBase/WeaponRig" index="0"]
+Damage = 20
+
+[node name="Weapon2" parent="Field/PlayerCharacterBase/WeaponRig" index="1"]
+Range = 90000
+Damage = 20
+
+[node name="Node" type="Node" parent="Field/PlayerCharacterBase/WeaponRig/Weapon2" index="4"]
+
+[node name="CharacterController" parent="Field/PlayerCharacterBase" index="3" node_paths=PackedStringArray("Character", "Camera")]
+Character = NodePath("..")
+Camera = NodePath("../../Camera/Camera2D")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Field"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Field/ParallaxBackground"]
+motion_mirroring = Vector2(2560, 1440)
+
+[node name="TextureRect" type="TextureRect" parent="Field/ParallaxBackground/ParallaxLayer"]
+visible = false
+offset_right = 2560.0
+offset_bottom = 1440.0
+texture = ExtResource("3_odme7")
+
+[node name="LevelDemo" parent="Field/ParallaxBackground/ParallaxLayer" instance=ExtResource("10_ts786")]
+scale = Vector2(3.2, 3.2)
+
+[node name="ProjectileSpawner" type="Node" parent="Field"]
+script = ExtResource("4_pvtd8")
+ProjectileScene = ExtResource("5_c76ll")
+
+[node name="Camera" type="Node2D" parent="Field" node_paths=PackedStringArray("Origin")]
+script = ExtResource("6_aro8c")
+Origin = NodePath("../PlayerCharacterBase")
+maxHorizontalTrauma = 75
+maxVerticalTrauma = 50
+noise = SubResource("FastNoiseLite_43k1g")
+
+[node name="Camera2D" type="Camera2D" parent="Field/Camera"]
+zoom = Vector2(0.75, 0.75)
+position_smoothing_enabled = true
+
+[node name="Center" type="Sprite2D" parent="Field/Camera"]
+visible = false
+modulate = Color(1, 0.168627, 0.113725, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_yagei")
+
+[node name="Smoother2" type="Node" parent="Field/Camera"]
+script = ExtResource("8_6ebtm")
+recursive = false
+
+[node name="EnemySpawner" type="Node2D" parent="Field"]
+y_sort_enabled = true
+position = Vector2(1, 0)
+script = ExtResource("14_8y2og")
+
+[node name="Gui" type="CanvasLayer" parent="."]
+
+[node name="StartMenu" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="StartMenu"]
+custom_minimum_size = Vector2(2560, 1440)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[editable path="Field/PlayerCharacterBase"]

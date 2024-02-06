@@ -1,0 +1,81 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://_developer/Common/BattleController/DebugGUI/gui_battler_controller.gd" type="Script" id=1]
+[ext_resource path="res://addons/folder_node/folder.gd" type="Script" id=2]
+[ext_resource path="res://_developer/Common/BattleController/DebugGUI/gui_mouse_handler.gd" type="Script" id=3]
+[ext_resource path="res://_developer/Common/BattleController/DebugGUI/gui_cursor_controller.gd" type="Script" id=4]
+[ext_resource path="res://assets/SceneBattle/BattleController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://_developer/Common/BattleController/DebugGUI/gui_camera_rig.gd" type="Script" id=6]
+[ext_resource path="res://assets/SceneBattle/gui_command_log.gd" type="Script" id=7]
+[ext_resource path="res://assets/Core/BattleController/States/select_command_state.gd" type="Script" id=8]
+[ext_resource path="res://assets/Core/BattleController/States/start_turn_state.gd" type="Script" id=9]
+[ext_resource path="res://assets/Core/BattleController/TurnController/turn_controller.gd" type="Script" id=10]
+[ext_resource path="res://assets/Core/BattleController/States/select_facing_state.gd" type="Script" id=11]
+[ext_resource path="res://assets/Core/BattleController/States/select_ability_state.gd" type="Script" id=12]
+[ext_resource path="res://assets/Core/BattleController/States/select_target_state.gd" type="Script" id=13]
+[ext_resource path="res://assets/Core/BattleController/States/perform_ability_state.gd" type="Script" id=14]
+[ext_resource path="res://assets/Core/BattleController/States/init_battle_state.gd" type="Script" id=15]
+[ext_resource path="res://assets/Core/BattleController/VictoryConditions/defeat_all_enemies_victory_condition.gd" type="Script" id=16]
+[ext_resource path="res://_developer/Common/BattleController/DebucVictoryCondition.gd" type="Script" id=17]
+[ext_resource path="res://assets/Core/BattleController/States/end_of_battle_state.gd" type="Script" id=18]
+[ext_resource path="res://assets/Core/BattleController/computer_player.gd" type="Script" id=19]
+[ext_resource path="res://assets/Core/BattleController/auto_status_controller.gd" type="Script" id=20]
+
+[node name="BattleController" instance=ExtResource( 5 )]
+
+[node name="SelectCommandState" type="Node" parent="." index="4"]
+script = ExtResource( 8 )
+
+[node name="StartTurnState" type="Node" parent="." index="5"]
+script = ExtResource( 9 )
+
+[node name="SelectFacingState" type="Node" parent="." index="6"]
+script = ExtResource( 11 )
+
+[node name="SelectAbilityState" type="Node" parent="." index="7"]
+script = ExtResource( 12 )
+
+[node name="SelectTargetState" type="Node" parent="." index="8"]
+script = ExtResource( 13 )
+
+[node name="PerformAbilityState" type="Node" parent="." index="9"]
+script = ExtResource( 14 )
+
+[node name="InitBattleState" type="Node" parent="." index="10"]
+script = ExtResource( 15 )
+
+[node name="Debug" type="Node" parent="." index="11"]
+script = ExtResource( 2 )
+
+[node name="DebugBattleController" type="Node" parent="Debug" index="0"]
+script = ExtResource( 1 )
+
+[node name="DebugCursor" type="Node" parent="Debug" index="1"]
+script = ExtResource( 4 )
+
+[node name="DebugMouse" type="Node" parent="Debug" index="2"]
+script = ExtResource( 3 )
+
+[node name="DebugCamera" type="Node" parent="Debug" index="3"]
+script = ExtResource( 6 )
+
+[node name="DebugCombatLog" type="Node" parent="Debug" index="4"]
+script = ExtResource( 7 )
+
+[node name="DebucVictoryCondition" type="Node" parent="Debug" index="5"]
+script = ExtResource( 17 )
+
+[node name="TurnController" type="Node" parent="." index="12"]
+script = ExtResource( 10 )
+
+[node name="DefeatAllEnemiesVictoryCondition" type="Node" parent="." index="13"]
+script = ExtResource( 16 )
+
+[node name="EndOfBattleState" type="Node" parent="." index="14"]
+script = ExtResource( 18 )
+
+[node name="ComputerPlayer" type="Node" parent="." index="15"]
+script = ExtResource( 19 )
+
+[node name="AutoStatusController" type="Node" parent="." index="16"]
+script = ExtResource( 20 )

@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0skg0p3hshh0"]
+
+[ext_resource type="Script" path="res://BadType/Core/Pawns/PlayerCharacterBase.cs" id="1_jh0h1"]
+[ext_resource type="Script" path="res://BadType/Core/Common/Smoother.gd" id="2_xckvv"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponRig.cs" id="4_vtiu1"]
+[ext_resource type="PackedScene" uid="uid://cf4dmlcn4pt6h" path="res://BadType/Weapons/Gun/Gun.tscn" id="5_7uk4y"]
+[ext_resource type="PackedScene" uid="uid://hpe8dv4j8vcy" path="res://BadType/Characters/CharacterController/CharacterController.tscn" id="6_cgy6b"]
+[ext_resource type="Script" path="res://_Developer/Demos/DemoBoosting/Line2D.gd" id="7_j07cq"]
+[ext_resource type="Script" path="res://_Developer/Demos/DemoBoosting/Line4D.gd" id="8_4yara"]
+[ext_resource type="PackedScene" uid="uid://c6f81uhmnhae1" path="res://BadType/Characters/Mech/Character_Mech.tscn" id="9_s641m"]
+[ext_resource type="Script" path="res://BadType/Characters/ProgressBar.gd" id="9_w7l1k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntmmc"]
+radius = 25.0
+
+[node name="PlayerCharacterBase" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_jh0h1")
+Speed = 300
+Charge = 4.0
+
+[node name="Smoother" type="Node" parent="."]
+script = ExtResource("2_xckvv")
+recursive = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ntmmc")
+
+[node name="WeaponRig" type="Node2D" parent="."]
+position = Vector2(0, -74)
+script = ExtResource("4_vtiu1")
+Radius = 70
+
+[node name="Weapon" parent="WeaponRig" instance=ExtResource("5_7uk4y")]
+Range = 4000
+AttackRate = 0.15
+
+[node name="Weapon2" parent="WeaponRig" instance=ExtResource("5_7uk4y")]
+Range = 4000
+AttackRate = 0.15
+
+[node name="CharacterController" parent="." instance=ExtResource("6_cgy6b")]
+Speed = 400
+MaxSpeed = 1600
+DashMultiplier = 1.5
+DashDuration = 0.4
+SlideDrag = 200
+SlideBreakForce = 5.0
+
+[node name="Direction" type="Line2D" parent="."]
+width = 2.0
+default_color = Color(0, 1, 0.0431373, 1)
+script = ExtResource("7_j07cq")
+
+[node name="Velocity" type="Line2D" parent="."]
+width = 4.0
+default_color = Color(0.0745098, 0.0980392, 1, 1)
+script = ExtResource("8_4yara")
+
+[node name="ProgressBar" type="ProgressBar" parent="." node_paths=PackedStringArray("Player")]
+offset_left = -106.0
+offset_top = 56.0
+offset_right = 108.0
+offset_bottom = 83.0
+script = ExtResource("9_w7l1k")
+Player = NodePath("..")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("9_s641m")]
+position = Vector2(0, -72)
+scale = Vector2(3, 3)
+autoplay = "Idle"

@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://typewars/ListMenus/TestSelectionMenu/Subentry/mode_button.gd" type="Script" id=1]
+[ext_resource path="res://typewars/ListMenus/TestSelectionMenu/Subentry/subentry_arguments.gd" type="Script" id=2]
+[ext_resource path="res://typewars/ListMenus/TestSelectionMenu/Subentry/size_input.gd" type="Script" id=3]
+
+[node name="ArgumentsSubentry" type="AspectRatioContainer"]
+margin_left = 149.0
+margin_right = 275.0
+margin_bottom = 24.0
+script = ExtResource( 2 )
+
+[node name="Body" type="HBoxContainer" parent="."]
+margin_right = 230.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_constants/separation = 2
+
+[node name="CombineRoot" type="Node" parent="Body"]
+
+[node name="Spacer" type="Label" parent="Body"]
+margin_top = 5.0
+margin_bottom = 19.0
+size_flags_horizontal = 2
+
+[node name="Mode" type="Button" parent="Body"]
+margin_left = 2.0
+margin_right = 102.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+toggle_mode = true
+script = ExtResource( 1 )
+
+[node name="SizeLabel" type="Label" parent="Body"]
+margin_left = 104.0
+margin_top = 5.0
+margin_right = 154.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 3
+
+[node name="SizeInput" type="SpinBox" parent="Body"]
+margin_left = 156.0
+margin_right = 230.0
+margin_bottom = 24.0
+focus_neighbour_left = NodePath("../Mode")
+script = ExtResource( 3 )
+
+[connection signal="toggled" from="Body/Mode" to="." method="_on_mode_toggled"]
+[connection signal="toggled" from="Body/Mode" to="Body/Mode" method="_on_Mode_toggled"]

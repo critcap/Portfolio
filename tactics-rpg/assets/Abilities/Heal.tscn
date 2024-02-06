@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/folder_node/folder.gd" type="Script" id=1]
+[ext_resource path="res://assets/Core/Ability/ability.gd" type="Script" id=2]
+[ext_resource path="res://assets/Core/Ability/Range/constant_ability_range.gd" type="Script" id=3]
+[ext_resource path="res://assets/Core/Ability/Effect/heal_ability_effect.gd" type="Script" id=4]
+[ext_resource path="res://assets/Core/Ability/Area/circle_ability_area.gd" type="Script" id=5]
+[ext_resource path="res://assets/Core/Ability/Targets/default_ability_effect_target.gd" type="Script" id=6]
+[ext_resource path="res://assets/Core/Ability/HitRate/sure_hit_rate.gd" type="Script" id=7]
+
+[node name="Heal" type="Node"]
+script = ExtResource( 2 )
+
+[node name="ConstantAbilityRange" type="Node" parent="."]
+script = ExtResource( 3 )
+horizontal = 5
+vertical = 999
+
+[node name="CircleAbilityArea" type="Node" parent="."]
+script = ExtResource( 5 )
+horizontal = 2
+vertical = 999
+
+[node name="Effects" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="HealAbilityEffect" type="Node" parent="Effects"]
+script = ExtResource( 4 )
+base = 18
+
+[node name="EffectTarget" type="Node" parent="Effects/HealAbilityEffect"]
+script = ExtResource( 6 )
+
+[node name="HitRate" type="Node" parent="Effects/HealAbilityEffect"]
+script = ExtResource( 7 )
+
+[connection signal="effect_hit" from="Effects/HealAbilityEffect" to="." method="on_hit"]
+[connection signal="effect_missed" from="Effects/HealAbilityEffect" to="." method="on_miss"]

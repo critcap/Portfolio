@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://typewars/Locals/locals.en.translation" ]
+
+source_file="res://typewars/Locals/locals.csv"
+dest_files=[ "res://typewars/Locals/locals.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

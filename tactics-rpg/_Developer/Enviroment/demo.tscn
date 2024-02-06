@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://_developer/Enviroment/demo_environment.tres" type="Environment" id=4]
+
+[node name="TestHall" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 4 )
+
+[node name="Sun" type="DirectionalLight" parent="."]
+transform = Transform( 0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, 0, 6.27174, 0 )
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_contact = 0.3

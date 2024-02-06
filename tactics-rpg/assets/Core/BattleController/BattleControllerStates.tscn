@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/Core/BattleController/States/confirm_movement_state.gd" type="Script" id=1]
+[ext_resource path="res://assets/Core/BattleController/States/select_movement_state.gd" type="Script" id=2]
+[ext_resource path="res://assets/Core/BattleController/States/init_battle_state.gd" type="Script" id=3]
+[ext_resource path="res://assets/Core/BattleController/States/perform_movement_state.gd" type="Script" id=4]
+[ext_resource path="res://assets/Core/BattleController/States/perform_ability_state.gd" type="Script" id=5]
+[ext_resource path="res://assets/Core/BattleController/States/select_command_state.gd" type="Script" id=6]
+[ext_resource path="res://assets/Core/BattleController/States/explore_state.gd" type="Script" id=7]
+[ext_resource path="res://assets/Core/BattleController/States/select_ability_state.gd" type="Script" id=8]
+[ext_resource path="res://assets/Core/BattleController/States/select_facing_state.gd" type="Script" id=9]
+[ext_resource path="res://assets/Core/BattleController/States/select_target_state.gd" type="Script" id=10]
+[ext_resource path="res://assets/Core/BattleController/States/start_turn_state.gd" type="Script" id=11]
+[ext_resource path="res://assets/Core/BattleController/States/end_of_battle_state.gd" type="Script" id=12]
+[ext_resource path="res://assets/Core/BattleController/battle_controller.gd" type="Script" id=13]
+
+[node name="BattleController" type="Node"]
+script = ExtResource( 13 )
+
+[node name="SelectFacingState" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="SelectAbilityState" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="ConfirmMovementState" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="SelectCommandState" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="StartTurnState" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="SelectTargetState" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="SelectMovementState" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="PerformMovementState" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="PerformAbilityState" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="InitBattleState" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="ExploreState" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="EndOfBattleState" type="Node" parent="."]
+script = ExtResource( 12 )

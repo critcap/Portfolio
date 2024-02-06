@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "70578271dd5b2db2",
+    "type": "split",
+    "children": [
+      {
+        "id": "35f3fc9a03b620ed",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Todo.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9a51bf585e26e602",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f9d76a4d3442de6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "123737b3df6ab8ef",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4e354dfc1098b4a4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "115f6eee4cb3be30",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d584b8148e784dd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "40601f65b3a8c079",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Todo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "35f3fc9a03b620ed",
+  "lastOpenFiles": [
+    "Todo.md",
+    "Maps/castle_map_data.md",
+    "Maps/Wetlands.png",
+    "Maps/Castle.png",
+    "Maps/City2.png",
+    "Maps/City1.png",
+    "Classes.md",
+    "Log.md",
+    "Lines.md",
+    "Coritani_Castle_-_Entrance 1.webp"
+  ]
+}

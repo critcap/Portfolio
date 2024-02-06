@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqbea04rcvn53"]
+
+[ext_resource type="Script" path="res://BadType/Core/Pawns/Weapon.cs" id="1_ufl2l"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponController.cs" id="2_caui6"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponIdleState.cs" id="3_er1ti"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponAimState.cs" id="4_635en"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponAttackState.cs" id="5_0g52r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe085"]
+
+[node name="WeaponMelee" type="Node2D"]
+script = ExtResource("1_ufl2l")
+Range = 10
+Damage = 10
+AttackRate = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qe085")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="WeaponController" type="Node" parent="."]
+script = ExtResource("2_caui6")
+
+[node name="WeaponIdleState" type="Node" parent="WeaponController"]
+script = ExtResource("3_er1ti")
+
+[node name="WeaponAimState" type="Node" parent="WeaponController"]
+script = ExtResource("4_635en")
+
+[node name="WeaponAttackState" type="Node" parent="WeaponController"]
+script = ExtResource("5_0g52r")

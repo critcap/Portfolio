@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://typewars/Core/settings.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+args_base_size = 60
+args_base_mode = 1
+factory_min_size = 3
+factory_max_size = 8
+correct_input_color = Color( 0.164706, 0.560784, 0.164706, 1 )
+false_input_color = Color( 0.705882, 0.117647, 0.117647, 1 )
+first_in_queue_color = Color( 0.5, 0.5, 0.5, 1 )
+second_in_queue_color = Color( 0.5, 0.5, 0.5, 0.5 )

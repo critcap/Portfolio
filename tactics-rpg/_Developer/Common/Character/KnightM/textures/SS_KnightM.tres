@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=2]
+
+[ext_resource path="res://_developer/Common/Character/KnightM/Textures/AT_Knight.png" type="Texture" id=1]
+
+[resource]
+flags = 19
+atlas = ExtResource( 1 )
+region = Rect2( 4, 128, 60, 64 )

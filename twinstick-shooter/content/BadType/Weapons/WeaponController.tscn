@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://be6tugmitgbc3"]
+
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponController.cs" id="1_84igo"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponIdleState.cs" id="2_ffhnl"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponAimState.cs" id="3_qu2dn"]
+[ext_resource type="Script" path="res://BadType/Core/Components/WeaponController/WeaponAttackState.cs" id="4_5kmlg"]
+
+[node name="WeaponController" type="Node"]
+script = ExtResource("1_84igo")
+ManualAim = true
+
+[node name="IdleState" type="Node" parent="." node_paths=PackedStringArray("AimState")]
+script = ExtResource("2_ffhnl")
+AimState = NodePath("../AimState")
+
+[node name="AimState" type="Node" parent="." node_paths=PackedStringArray("IdleState", "FireState")]
+script = ExtResource("3_qu2dn")
+IdleState = NodePath("../IdleState")
+FireState = NodePath("../ShootState")
+
+[node name="ShootState" type="Node" parent="." node_paths=PackedStringArray("IdleState", "AimState")]
+script = ExtResource("4_5kmlg")
+IdleState = NodePath("../IdleState")
+AimState = NodePath("../AimState")

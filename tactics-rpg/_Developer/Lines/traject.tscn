@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Core/Board/board.gd" type="Script" id=1]
+[ext_resource path="res://assets/Core/BattleController/cursor_controller.gd" type="Script" id=2]
+[ext_resource path="res://assets/SceneBattle/TrajectoryRenderer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Abilities/Frostbolt.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Core/CameraRig/CameraRig.tscn" type="PackedScene" id=5]
+[ext_resource path="res://_developer/Common/Character/KnightM/KnightM.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Materials/Debug/dark/materials/material_002.tres" type="Material" id=7]
+[ext_resource path="res://assets/SceneBattle/TileSelectCursor.tscn" type="PackedScene" id=8]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+export(float) var animation_speed: float = 0.5
+
+onready var ability = $Frostbolt
+onready var actor = $Battler/Pawn
+onready var target = $Target/Pawn
+
+var tiles: Array
+
+func _ready():
+	$Board._tiles = BoardGenerator.generate_board(Vector2(10, 10))
+	$CursorController.board = $Board
+	ability.ability_range.pawn = actor
+
+	actor.place($Board.get_tile(Vector3(5, 0, 0)))
+	actor.match_tile()
+	
+	target.place($Board.get_tile(Vector3(1, 0, 0)))
+	target.match_tile()
+	
+	$CursorController.connect(\"tile_changed\", self, \"update_trajectory\")
+
+	ability.subject = actor.get_parent()
+	draw_ability_range()
+
+#func _gui(_delta) -> void:
+#	if GUI.button(\"Refresh Range\"):
+
+		
+		
+func _unhandled_input(event):
+	if tiles.empty():
+		return
+	if event.is_action_pressed(\"ui_accept\"):
+		tiles = ability.ability_range.get_tiles_in_range($Board)
+		var tile = $Board.get_tile($CursorController.position) 
+		if tile == null || tiles.find(tile) == null:
+			return
+		var anim = ability.get_node(\"ProjectileAnimation\")
+		ability.subject = $Battler
+		anim.play()
+	
+
+func look_at_x(target: Vector3) -> void:
+	if $Spatial.global_transform.origin == target:
+		return
+	$Spatial.look_at(target, Vector3(1,0,0))
+
+func draw_ability_range() -> void:
+	$Board.deselect_tiles()
+	tiles = ability.ability_range.get_tiles_in_range($Board)
+	$Board.select_tiles(tiles)
+	
+		
+func update_trajectory(tile: Tile) -> void:
+	if !tiles.has(tile):
+		return
+	
+	var projectile = ability.get_node(\"Projectile\")
+	var start = actor.get_node(\"AbilityAnchor\").global_transform.origin
+	var simulated_trajectory = yield(projectile.simulate_projectile(tile, start), \"completed\")
+	$TrajectoryRenderer.draw_trajectory(tile, simulated_trajectory)
+"
+
+[node name="Node" type="Node"]
+script = SubResource( 1 )
+
+[node name="CursorController" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Cursor" parent="CursorController" instance=ExtResource( 8 )]
+
+[node name="Board" type="GridMap" parent="."]
+data = {
+"cells": PoolIntArray(  )
+}
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="CSGBox" type="CSGBox" parent="Board"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118856, -0.5, 0 )
+use_collision = true
+width = 20.0
+height = 1.0
+depth = 20.0
+material = ExtResource( 7 )
+
+[node name="Battler" type="Node" parent="."]
+
+[node name="Pawn" parent="Battler" instance=ExtResource( 6 )]
+visible = false
+
+[node name="Target" type="Node" parent="."]
+
+[node name="Pawn" parent="Target" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39995, 0, 0 )
+
+[node name="CameraRig" parent="." instance=ExtResource( 5 )]
+
+[node name="TrajectoryRenderer" parent="." instance=ExtResource( 3 )]
+visible = true
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33843, 2.9608, 1.2307 )
+use_collision = true
+height = 9.79698
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Frostbolt" parent="." instance=ExtResource( 4 )]
+
+[editable path="CameraRig"]

@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://kgg523rw1yw8"]
+
+[ext_resource type="Script" path="res://BadType/Core/Pawns/EnemyPawnBase.cs" id="1_d4nun"]
+[ext_resource type="Script" path="res://BadType/Core/Components/PawnController/PawnController.cs" id="3_fc11t"]
+[ext_resource type="Texture2D" uid="uid://cvunnqtspeon" path="res://BadType/Enemies/enemies x1.png" id="4_55y22"]
+[ext_resource type="Script" path="res://BadType/Core/Components/PawnController/PawnFollowState.cs" id="4_g1xhr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntmmc"]
+radius = 44.1022
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0bni"]
+atlas = ExtResource("4_55y22")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkep0"]
+atlas = ExtResource("4_55y22")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ousa"]
+atlas = ExtResource("4_55y22")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wku4"]
+atlas = ExtResource("4_55y22")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bva2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0bni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkep0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ousa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wku4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_g87bh"]
+resource_name = "Flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.282353, 1, 1, 1), Color(0.6, 1, 0, 1), Color(0.282353, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7lqm"]
+_data = {
+"Flash": SubResource("Animation_g87bh")
+}
+
+[node name="EnemyPawnBase" type="CharacterBody2D" node_paths=PackedStringArray("Sprite")]
+position = Vector2(-1, 0)
+script = ExtResource("1_d4nun")
+Speed = 200
+Sprite = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -8)
+shape = SubResource("CircleShape2D_ntmmc")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 40.0
+target_desired_distance = 73.58
+path_max_distance = 300.0
+avoidance_enabled = true
+radius = 20.0
+neighbor_distance = 600.0
+max_neighbors = 100
+time_horizon_agents = 3.0
+debug_enabled = true
+
+[node name="PawnController" type="Node" parent="."]
+script = ExtResource("3_fc11t")
+
+[node name="PawnFollowState" type="Node" parent="PawnController" node_paths=PackedStringArray("NavigationAgent")]
+script = ExtResource("4_g1xhr")
+NavigationAgent = NodePath("../../NavigationAgent2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.282353, 1, 1, 1)
+position = Vector2(-1, -21)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_bva2w")
+autoplay = "default"
+frame_progress = 0.107571
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l7lqm")
+}
+speed_scale = 6.0
+
+[connection signal="path_changed" from="NavigationAgent2D" to="PawnController/PawnFollowState" method="OnNavigationAgentPathChanged"]

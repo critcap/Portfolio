@@ -1,0 +1,15 @@
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+reports/
+
+.DS_Store
+# Mono-specific ignores
+.mono/
+
+**/.DS_Store
+
+_Developer/Common/Character/KnightM/textures/AT_Knight.png.import
+_Developer/Common/BuilderMeshLibs/ML_WhiteBox.tres

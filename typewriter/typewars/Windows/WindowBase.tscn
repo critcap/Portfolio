@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://typewars/Windows/theme_window_font.tres" type="DynamicFont" id=1]
+
+[node name="WindowBase" type="PanelContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -257.0
+margin_top = -14.0
+margin_right = 257.0
+margin_bottom = 14.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 507.0
+margin_bottom = 27.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_right = 500.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 500, 1 )
+custom_fonts/font = ExtResource( 1 )
+autowrap = true

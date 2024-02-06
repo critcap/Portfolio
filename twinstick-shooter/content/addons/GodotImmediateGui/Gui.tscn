@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2yt3o2v7jb0h"]
+
+[ext_resource type="Script" path="res://addons/GodotImmediateGui/GUI.gd" id="1_iqatl"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_iqatl")

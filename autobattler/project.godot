@@ -1,0 +1,382 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "AnnouncerView",
+"language": "GDScript",
+"path": "res://src/view_components/board/announcer_view.gd"
+}, {
+"base": "GameEvent",
+"class": "AttackEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/attack_event.gd"
+}, {
+"base": "Node",
+"class": "AttackSystem",
+"language": "GDScript",
+"path": "res://src/systems/attack_system.gd"
+}, {
+"base": "BaseView",
+"class": "AttackView",
+"language": "GDScript",
+"path": "res://src/view_components/board/attack_view.gd"
+}, {
+"base": "Node",
+"class": "BaseView",
+"language": "GDScript",
+"path": "res://src/view_components/board/view_base.gd"
+}, {
+"base": "CombatState",
+"class": "BoardCombatState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/board_combat_state.gd"
+}, {
+"base": "Node",
+"class": "BoardView",
+"language": "GDScript",
+"path": "res://src/view_components/board/board_view.gd"
+}, {
+"base": "Reference",
+"class": "CardFactory",
+"language": "GDScript",
+"path": "res://src/factories/card_factory.gd"
+}, {
+"base": "Node",
+"class": "CardSystem",
+"language": "GDScript",
+"path": "res://src/systems/card_system.gd"
+}, {
+"base": "Reference",
+"class": "CardType",
+"language": "GDScript",
+"path": "res://src/enums/card_type.gd"
+}, {
+"base": "Node2D",
+"class": "CardView",
+"language": "GDScript",
+"path": "res://src/view_components/cards/card_view.gd"
+}, {
+"base": "CombatState",
+"class": "CleanupState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/cleanup_state.gd"
+}, {
+"base": "StateMachine",
+"class": "CombatManager",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_manager.gd"
+}, {
+"base": "State",
+"class": "CombatState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/combat_state.gd"
+}, {
+"base": "GameEvent",
+"class": "DamageEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/damage_event.gd"
+}, {
+"base": "Position2D",
+"class": "DamagePopup",
+"language": "GDScript",
+"path": "res://src/view_components/cards/card_damage_popup.gd"
+}, {
+"base": "Node",
+"class": "DamageSystem",
+"language": "GDScript",
+"path": "res://src/systems/damage_system.gd"
+}, {
+"base": "BaseView",
+"class": "DamageView",
+"language": "GDScript",
+"path": "res://src/view_components/board/damage_view.gd"
+}, {
+"base": "GameEvent",
+"class": "DeathEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/death_event.gd"
+}, {
+"base": "Node",
+"class": "DeathSystem",
+"language": "GDScript",
+"path": "res://src/systems/death_system.gd"
+}, {
+"base": "GameEvent",
+"class": "DrawCardsEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/draw_card_event.gd"
+}, {
+"base": "Node",
+"class": "DrawCardsView",
+"language": "GDScript",
+"path": "res://src/view_components/board/draw_cards_view.gd"
+}, {
+"base": "CombatState",
+"class": "DrawCombatState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/draw_combat_state.gd"
+}, {
+"base": "PlayerView",
+"class": "EnemyPlayerView",
+"language": "GDScript",
+"path": "res://src/view_components/board/enemy_player_view.gd"
+}, {
+"base": "CombatState",
+"class": "EnemyTurnState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/enemy_turn_state.gd"
+}, {
+"base": "Node",
+"class": "EventSystem",
+"language": "GDScript",
+"path": "res://src/systems/event_system.gd"
+}, {
+"base": "ZoneView",
+"class": "FieldView",
+"language": "GDScript",
+"path": "res://src/view_components/board/field_view.gd"
+}, {
+"base": "Node",
+"class": "GameCard",
+"language": "GDScript",
+"path": "res://src/entities/card.gd"
+}, {
+"base": "GameEventBase",
+"class": "GameEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/game_event.gd"
+}, {
+"base": "Reference",
+"class": "GameEventBase",
+"language": "GDScript",
+"path": "res://src/systems/events/event_base.gd"
+}, {
+"base": "ZoneView",
+"class": "HandView",
+"language": "GDScript",
+"path": "res://src/view_components/board/hand_view.gd"
+}, {
+"base": "CombatState",
+"class": "InitCombatState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/init_combat_state.gd"
+}, {
+"base": "Reference",
+"class": "Int2Word",
+"language": "GDScript",
+"path": "res://src/singeltons/int_to_word.gd"
+}, {
+"base": "CombatState",
+"class": "MatchEndState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/match_end_state.gd"
+}, {
+"base": "CombatState",
+"class": "PerformCombatState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/perform_combat_state.gd"
+}, {
+"base": "Reference",
+"class": "Phase",
+"language": "GDScript",
+"path": "res://src/systems/events/phase.gd"
+}, {
+"base": "Control",
+"class": "PlayerAvatarView",
+"language": "GDScript",
+"path": "res://src/view_components/board/player_avatar_view.gd"
+}, {
+"base": "Node",
+"class": "PlayerBase",
+"language": "GDScript",
+"path": "res://src/entities/player.gd"
+}, {
+"base": "Reference",
+"class": "PlayerIndex",
+"language": "GDScript",
+"path": "res://src/enums/player_index.gd"
+}, {
+"base": "Node",
+"class": "PlayerSystem",
+"language": "GDScript",
+"path": "res://src/systems/player_system.gd"
+}, {
+"base": "Node",
+"class": "PlayerView",
+"language": "GDScript",
+"path": "res://src/view_components/board/player_view.gd"
+}, {
+"base": "CombatState",
+"class": "PrepareCombatState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/prepare_combat_state.gd"
+}, {
+"base": "GameEvent",
+"class": "ReturnEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/return_event.gd"
+}, {
+"base": "GameEvent",
+"class": "StartTurnEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/start_turn_event.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://src/common/state.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://src/common/state_machine.gd"
+}, {
+"base": "CombatState",
+"class": "TestCombatState",
+"language": "GDScript",
+"path": "res://src/combat_manager/combat_states/test_combat_state.gd"
+}, {
+"base": "GameEvent",
+"class": "TestEvent",
+"language": "GDScript",
+"path": "res://src/systems/events/test_event.gd"
+}, {
+"base": "Node",
+"class": "VictorySystem",
+"language": "GDScript",
+"path": "res://src/systems/victory_system.gd"
+}, {
+"base": "Node2D",
+"class": "ZoneView",
+"language": "GDScript",
+"path": "res://src/view_components/board/card_zone.gd"
+}, {
+"base": "Reference",
+"class": "Zones",
+"language": "GDScript",
+"path": "res://src/enums/zones.gd"
+} ]
+_global_script_class_icons={
+"AnnouncerView": "",
+"AttackEvent": "",
+"AttackSystem": "",
+"AttackView": "",
+"BaseView": "",
+"BoardCombatState": "",
+"BoardView": "",
+"CardFactory": "",
+"CardSystem": "",
+"CardType": "",
+"CardView": "",
+"CleanupState": "",
+"CombatManager": "",
+"CombatState": "",
+"DamageEvent": "",
+"DamagePopup": "",
+"DamageSystem": "",
+"DamageView": "",
+"DeathEvent": "",
+"DeathSystem": "",
+"DrawCardsEvent": "",
+"DrawCardsView": "",
+"DrawCombatState": "",
+"EnemyPlayerView": "",
+"EnemyTurnState": "",
+"EventSystem": "",
+"FieldView": "",
+"GameCard": "",
+"GameEvent": "",
+"GameEventBase": "",
+"HandView": "",
+"InitCombatState": "",
+"Int2Word": "",
+"MatchEndState": "",
+"PerformCombatState": "",
+"Phase": "",
+"PlayerAvatarView": "",
+"PlayerBase": "",
+"PlayerIndex": "",
+"PlayerSystem": "",
+"PlayerView": "",
+"PrepareCombatState": "",
+"ReturnEvent": "",
+"StartTurnEvent": "",
+"State": "",
+"StateMachine": "",
+"TestCombatState": "",
+"TestEvent": "",
+"VictorySystem": "",
+"ZoneView": "",
+"Zones": ""
+}
+
+[WAT]
+
+Test_Directory="res://tests"
+Results_Directory="res://tests"
+Test_Metadata_Directory="res://tests"
+Tags=PoolStringArray(  )
+Window_Size=Vector2( 1280, 720 )
+Minimize_Window_When_Running_Tests=false
+Port=6008
+Default_Launch=0
+Run_All_Tests=Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+
+Auto_Refresh_Tests=false
+Display=8
+
+[application]
+
+config/name="setokaiba"
+run/main_scene="res://src/scenes/main.tscn"
+config/icon="res://content/icons/sword.png"
+
+[autoload]
+
+Groups="*res://src/singeltons/groups.gd"
+GlobalSignals="*res://src/singeltons/signal_hub.gd"
+
+[debug]
+
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
+gdscript/warnings/integer_division=false
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1280
+window/size/test_height=720
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "WAT" )
+
+[input]
+
+left_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+right_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[rendering]
+
+environment/default_environment="res://content/environment/default_env.tres"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://typewars/Core/Controller/States/init_state.gd" type="Script" id=1]
+[ext_resource path="res://typewars/Core/Controller/typing_test_controller.gd" type="Script" id=2]
+[ext_resource path="res://typewars/Core/Controller/States/select_test_state.gd" type="Script" id=3]
+[ext_resource path="res://typewars/Core/Controller/States/setup_test_state.gd" type="Script" id=4]
+[ext_resource path="res://typewars/Core/Controller/States/type_race_test_state.gd" type="Script" id=5]
+[ext_resource path="res://typewars/Core/Controller/States/end_test_state.gd" type="Script" id=6]
+[ext_resource path="res://typewars/Core/Controller/States/time_attack_test_state.gd" type="Script" id=7]
+
+[node name="TestManager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="States" type="Node" parent="."]
+
+[node name="InitState" type="Node" parent="States"]
+script = ExtResource( 1 )
+
+[node name="SetupTestState" type="Node" parent="States"]
+script = ExtResource( 4 )
+
+[node name="SelectTestState" type="Node" parent="States"]
+script = ExtResource( 3 )
+
+[node name="EndTestState" type="Node" parent="States"]
+script = ExtResource( 6 )
+
+[node name="TypeRaceTestState" type="Node" parent="States"]
+script = ExtResource( 5 )
+
+[node name="TimeAttackTestState" type="Node" parent="States"]
+script = ExtResource( 7 )

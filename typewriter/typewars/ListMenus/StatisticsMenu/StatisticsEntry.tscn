@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://typewars/Core/UI/ListMenu/list_entry.gd" type="Script" id=1]
+[ext_resource path="res://typewars/ListMenus/TestSelectionMenu/Subentry/Arguments.tscn" type="PackedScene" id=2]
+
+[node name="ListEntry" type="HBoxContainer"]
+margin_right = 103.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+
+[node name="IndicatorSelect" type="Label" parent="."]
+visible = false
+margin_top = 3.0
+margin_right = 8.0
+margin_bottom = 17.0
+text = ">>"
+
+[node name="IndicatorInvalid" type="Label" parent="."]
+visible = false
+margin_left = 12.0
+margin_top = 3.0
+margin_right = 20.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 8, 0 )
+text = ">!"
+
+[node name="IndicatorSubEntry" type="Label" parent="."]
+visible = false
+margin_left = 24.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 17.0
+rect_min_size = Vector2( 8, 0 )
+text = ">?"
+
+[node name="Item" type="Button" parent="."]
+margin_right = 100.0
+margin_bottom = 24.0
+text = "asdasdasdasd"
+
+[node name="ArgumentsSubentry" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 104.0
+margin_right = 249.0
+
+[connection signal="focus_entered" from="Item" to="." method="select_item"]
+[connection signal="focus_exited" from="Item" to="." method="deselect_item"]
+[connection signal="pressed" from="Item" to="." method="_on_item_pressed"]

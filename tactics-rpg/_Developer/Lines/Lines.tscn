@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/Core/CameraRig/CameraRig.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Core/Board/board.gd" type="Script" id=2]
+[ext_resource path="res://assets/Core/BattleController/cursor_controller.gd" type="Script" id=3]
+[ext_resource path="res://assets/SceneBattle/TileSelectCursor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Materials/Debug/blue/materials/material_002.tres" type="Material" id=5]
+[ext_resource path="res://_developer/Lines/Lines.gd" type="Script" id=6]
+[ext_resource path="res://assets/Core/Common/LineRenderer.gd" type="Script" id=7]
+[ext_resource path="res://assets/Abilities/RangeAttack.tscn" type="PackedScene" id=8]
+[ext_resource path="res://_developer/Common/Character/KnightM/KnightM.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 20, 20, 2 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -10, 10, 1, 10, 10, 1, -10, -10, 1, 10, 10, 1, 10, -10, 1, -10, -10, 1, 10, 10, -1, -10, 10, -1, 10, -10, -1, -10, 10, -1, -10, -10, -1, 10, -10, -1, 10, 10, 1, 10, 10, -1, 10, -10, 1, 10, 10, -1, 10, -10, -1, 10, -10, 1, -10, 10, -1, -10, 10, 1, -10, -10, -1, -10, 10, 1, -10, -10, 1, -10, -10, -1, 10, 10, 1, -10, 10, 1, 10, 10, -1, -10, 10, 1, -10, 10, -1, 10, 10, -1, -10, -10, 1, 10, -10, 1, -10, -10, -1, 10, -10, 1, 10, -10, -1, -10, -10, -1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0.054902, 0, 1, 1 )
+
+[node name="Spatial" type="Node"]
+script = ExtResource( 6 )
+
+[node name="Board" type="GridMap" parent="."]
+data = {
+"cells": PoolIntArray(  )
+}
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="Floor" type="CSGBox" parent="Board"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+use_collision = true
+collision_layer = 159
+width = 41.0
+height = 1.0
+depth = 41.0
+
+[node name="Wall" type="MeshInstance" parent="Board"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.43571 )
+mesh = SubResource( 4 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Board/Wall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Board/Wall/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="CursorController" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Cursor" parent="CursorController" instance=ExtResource( 4 )]
+
+[node name="CameraRig" parent="." instance=ExtResource( 1 )]
+follow_target = NodePath("../CursorController/Cursor")
+
+[node name="Camera" parent="CameraRig/Elevation" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+fov = 30.0
+
+[node name="Battler" type="Node" parent="."]
+
+[node name="Pawn" parent="Battler" instance=ExtResource( 10 )]
+
+[node name="LineRenderer" type="ImmediateGeometry" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00612068, 0.0108414, -0.00979614 )
+visible = false
+material_override = SubResource( 2 )
+script = ExtResource( 7 )
+startThickness = 0.02
+endThickness = 0.02
+cornerSmooth = 1
+capSmooth = 1
+
+[node name="Triangle" type="ImmediateGeometry" parent="."]
+material_override = SubResource( 3 )
+script = ExtResource( 7 )
+startThickness = 0.01
+endThickness = 0.01
+
+[node name="RangeAttack" parent="." instance=ExtResource( 8 )]
+
+[editable path="CameraRig"]
+[editable path="RangeAttack"]

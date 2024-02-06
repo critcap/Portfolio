@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/SceneBattle/gui_status.gd" type="Script" id=1]
+[ext_resource path="res://assets/SceneBattle/gui_target.gd" type="Script" id=2]
+[ext_resource path="res://tests/BattleScene/TestMovementSequence.gd" type="Script" id=3]
+[ext_resource path="res://_developer/Demos/Battle/Demo_MultipleBattler.tscn" type="PackedScene" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "class_name BattleController
+extends StateMachine
+
+var camera_rig: CameraRigController
+var board: Board
+var cursor: CursorController
+var tile: Tile setget , get_tile
+var units: Array setget , get_units
+var command: Command
+var turn: CommandHistory setget , get_turn
+var selection_menu: SelectionMenuController
+
+
+func get_tile() -> Tile:
+	return board.get_tile(cursor.position) as Tile
+
+
+func get_turn() -> Turn:
+	return get_node(\"TurnController\").turn
+
+
+func get_units() -> Array:
+	return $Battlers.get_children()
+
+
+func start(init_state: String = \"InitBattleState\") -> void:
+	change_state(init_state)
+"
+
+[node name="Main" instance=ExtResource( 4 )]
+script = ExtResource( 3 )
+
+[node name="BattleController" parent="." index="0"]
+script = SubResource( 1 )
+
+[node name="CameraRig" parent="BattleController" index="14"]
+max_zoom = 150.0
+
+[node name="Camera" parent="BattleController/CameraRig/Elevation" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60 )
+fov = 10.0
+
+[node name="Board" parent="BattleController" index="15"]
+data = {
+"cells": PoolIntArray(  )
+}
+
+[node name="TargetDisplay" type="Control" parent="BattleController" index="17"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StatusDisplay" type="Control" parent="BattleController" index="18"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="BattleController/CameraRig"]

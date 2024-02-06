@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://typewars/Core/UI/InputPrompt/active_prompt_label.gd" type="Script" id=1]
+
+[node name="ActivePromptLabel" type="Label"]
+margin_left = 41.0
+margin_top = 50.0
+margin_right = 297.0
+margin_bottom = 64.0
+text = "sdfgdfgsdfsdfsdf"
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_bottom = 35.0
+color = Color( 0.478431, 0.556863, 0.258824, 1 )

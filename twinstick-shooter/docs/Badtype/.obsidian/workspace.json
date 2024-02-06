@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "d5a4c5a9f5060bd9",
+    "type": "split",
+    "children": [
+      {
+        "id": "01d64a9e9342e715",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4a01e8fb62e3a368",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SceneTree.md",
+                "mode": "source"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ce63c5fa963981dd",
+    "type": "split",
+    "children": [
+      {
+        "id": "a03de591d398891d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f8699120381e5854",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "950bbc43025f126f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c689b8503748a80f",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "68fc20afa1266bff",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d734e5ecc6566416",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d5e43814d295c77",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cc2a4515cf365c38",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "SceneTree.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3264f598d28482dc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "SceneTree.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2efedb97829120a2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d557ad05f4888999",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "SceneTree.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "4a01e8fb62e3a368",
+  "lastOpenFiles": [
+    "Actors/Enemy.md",
+    "Behaviour/Behaviour Planning.md",
+    "Untitled.md",
+    "Excalidraw/Data Relation.md",
+    "Excalidraw/Drawing 2023-03-20 23.36.40.excalidraw.md",
+    "Excalidraw/Drawing 2023-03-25 02.02.00.excalidraw.md",
+    "Pivots.md",
+    "Excalidraw/Drawing 2023-05-16 00.39.01.excalidraw.md",
+    "Excalidraw/Drawing 2023-05-12 00.16.32.excalidraw.md",
+    "Untitled 1.md",
+    "Mama/Untitled.md",
+    "Mama",
+    "Excalidraw/Untitled.md",
+    "SceneTree.md",
+    "Excalidraw/Scripts/Downloaded/Set Dimensions.svg",
+    "Excalidraw/Scripts/Downloaded/Set Dimensions.md",
+    "Excalidraw/Drawing 2023-03-14 17.37.57.excalidraw.md",
+    "Excalidraw/Drawing 2023-03-13 22.46.37.excalidraw.md",
+    "Sprints",
+    "Actors/PlayerCharacter.md",
+    "Excalidraw/Scripts/Downloaded/Elbow connectors.svg",
+    "Excalidraw/Scripts/Downloaded/Elbow connectors.md",
+    "Excalidraw/Scripts/Downloaded/Convert selected text elements to sticky notes.svg",
+    "Excalidraw/Scripts/Downloaded/Convert selected text elements to sticky notes.md",
+    "Excalidraw/Scripts/Downloaded/Connect elements.svg",
+    "Excalidraw/Scripts/Downloaded/Connect elements.md",
+    "Excalidraw/Scripts/Downloaded/Box Selected Elements.svg",
+    "Excalidraw/Scripts/Downloaded/Box Selected Elements.md",
+    "Excalidraw/Scripts/Downloaded/Auto Layout.svg",
+    "Excalidraw/Scripts/Downloaded/Auto Layout.md",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "Systems and Events/Taking Damage.md",
+    "Excalidraw",
+    "Behaviour",
+    "Systems and Events",
+    "Actors/Actors, Pawns and Characters.md"
+  ]
+}

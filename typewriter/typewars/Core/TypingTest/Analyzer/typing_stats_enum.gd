@@ -1,0 +1,3 @@
+class_name ETypingStats
+
+enum { CODE, TOTAL_COUNT, TOTAL_TIME, CORRECT, ERRORS, FASTEST, LONGEST }

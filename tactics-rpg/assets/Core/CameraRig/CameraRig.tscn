@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/Core/CameraRig/camera_rig_controller.gd" type="Script" id=1]
+
+[node name="CameraRig" type="Spatial"]
+script = ExtResource( 1 )
+max_zoom = 40.0
+allow_wasd_movement = false
+use_one_way_movement = false
+
+[node name="Elevation" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="Elevation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+
+[node name="Tween" type="Tween" parent="."]

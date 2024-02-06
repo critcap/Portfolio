@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://hpe8dv4j8vcy"]
+
+[ext_resource type="Script" path="res://BadType/Characters/CharacterController/CharacterController.cs" id="1_76vgb"]
+[ext_resource type="Script" path="res://BadType/Characters/CharacterController/States/IdleState.cs" id="2_oap5b"]
+[ext_resource type="Script" path="res://BadType/Characters/CharacterController/States/DashState.cs" id="3_ixdts"]
+[ext_resource type="Script" path="res://BadType/Characters/CharacterController/States/BoostState.cs" id="4_uhxjc"]
+[ext_resource type="Script" path="res://BadType/Characters/CharacterController/States/SlideState.cs" id="5_tm0de"]
+[ext_resource type="Script" path="res://BadType/Characters/CharacterController/States/MoveState.cs" id="6_juudm"]
+
+[node name="CharacterController" type="Node"]
+script = ExtResource("1_76vgb")
+MaxSpeed = 900
+DashMultiplier = 1.0
+SlideDrag = 100
+SlideSteeringForce = 2.0
+SlideBreakForce = 10.0
+
+[node name="IdleState" type="Node" parent="." node_paths=PackedStringArray("DashState", "WalkState")]
+script = ExtResource("2_oap5b")
+DashState = NodePath("../DashState")
+WalkState = NodePath("../MoveState")
+
+[node name="DashState" type="Node" parent="." node_paths=PackedStringArray("SlideState", "IdleState", "WalkState", "IdleState")]
+script = ExtResource("3_ixdts")
+SlideState = NodePath("../SlideState")
+IdleState = NodePath("../IdleState")
+WalkState = NodePath("../MoveState")
+IdleState = NodePath("../IdleState")
+
+[node name="BoostState" type="Node" parent="."]
+script = ExtResource("4_uhxjc")
+
+[node name="SlideState" type="Node" parent="." node_paths=PackedStringArray("DashState", "IdleState", "MoveState")]
+script = ExtResource("5_tm0de")
+DashState = NodePath("../DashState")
+IdleState = NodePath("../IdleState")
+MoveState = NodePath("../MoveState")
+
+[node name="MoveState" type="Node" parent="." node_paths=PackedStringArray("DashState", "IdleState")]
+script = ExtResource("6_juudm")
+DashState = NodePath("../DashState")
+IdleState = NodePath("../IdleState")

@@ -1,0 +1,87 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://src/combat_manager/combat_manager.gd" type="Script" id=1]
+[ext_resource path="res://src/combat_manager/combat_states/init_combat_state.gd" type="Script" id=2]
+[ext_resource path="res://src/combat_manager/combat_states/board_combat_state.gd" type="Script" id=3]
+[ext_resource path="res://src/combat_manager/combat_states/draw_combat_state.gd" type="Script" id=4]
+[ext_resource path="res://src/combat_manager/combat_states/perform_combat_state.gd" type="Script" id=5]
+[ext_resource path="res://src/combat_manager/combat_states/enemy_turn_state.gd" type="Script" id=6]
+[ext_resource path="res://src/combat_manager/combat_states/test_combat_state.gd" type="Script" id=7]
+[ext_resource path="res://src/systems/damage_system.gd" type="Script" id=8]
+[ext_resource path="res://src/systems/death_system.gd" type="Script" id=9]
+[ext_resource path="res://src/systems/event_system.gd" type="Script" id=10]
+[ext_resource path="res://src/systems/card_system.gd" type="Script" id=11]
+[ext_resource path="res://src/systems/player_system.gd" type="Script" id=12]
+[ext_resource path="res://src/view_components/board/draw_cards_view.gd" type="Script" id=13]
+[ext_resource path="res://src/systems/attack_system.gd" type="Script" id=14]
+[ext_resource path="res://src/view_components/board/attack_view.gd" type="Script" id=15]
+[ext_resource path="res://src/combat_manager/combat_states/prepare_combat_state.gd" type="Script" id=16]
+[ext_resource path="res://src/combat_manager/combat_states/cleanup_state.gd" type="Script" id=17]
+[ext_resource path="res://src/view_components/board/damage_view.gd" type="Script" id=18]
+[ext_resource path="res://src/systems/victory_system.gd" type="Script" id=19]
+[ext_resource path="res://src/view_components/board/announcer_view.gd" type="Script" id=20]
+[ext_resource path="res://src/combat_manager/combat_states/match_end_state.gd" type="Script" id=21]
+
+[node name="CombatManager" type="Node"]
+script = ExtResource( 1 )
+
+[node name="InitCombatState" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="DrawCombatState" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="BoardCombatState" type="Node" parent="."]
+script = ExtResource( 3 )
+returnable = true
+
+[node name="EnemyTurnState" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="TestCombatState" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="DamageSystem" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="DeathSystem" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="EventSystem" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="PlayerSystem" type="Node" parent="."]
+script = ExtResource( 12 )
+
+[node name="CardSystem" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="DrawCardsView" type="Node" parent="."]
+script = ExtResource( 13 )
+
+[node name="AttackView" type="Node" parent="."]
+script = ExtResource( 15 )
+
+[node name="AttackSystem" type="Node" parent="."]
+script = ExtResource( 14 )
+
+[node name="PrepareCombatState" type="Node" parent="."]
+script = ExtResource( 16 )
+
+[node name="PerformCombatState" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="CleanupState" type="Node" parent="."]
+script = ExtResource( 17 )
+
+[node name="DamageView" type="Node" parent="."]
+script = ExtResource( 18 )
+
+[node name="VictorySystem" type="Node" parent="."]
+script = ExtResource( 19 )
+
+[node name="AnnouncerView" type="Node" parent="."]
+script = ExtResource( 20 )
+
+[node name="MatchEndState" type="Node" parent="."]
+script = ExtResource( 21 )

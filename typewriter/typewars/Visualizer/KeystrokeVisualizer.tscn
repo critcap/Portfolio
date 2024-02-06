@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://typewars/Fonts/FiraCode-Retina.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://typewars/Visualizer/keystroke_visualizer.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="KeystrokeVisualizer" type="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -33.0
+theme = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="Body" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_right = -40.0

@@ -1,0 +1,8 @@
+key,en
+HINT_RELOAD,reload test
+HINT_QUIT,quit test
+HINT_SUBENTRY,open/close subentry
+HINT_PROCEED,return to selection
+HINT_START_TEST,start test
+HINT_SHOW_HELP,show help
+TUT_TYPING_TEST,"QUICK TYPE MODE: Type the letters of the highlighted word. If you make a mistake you can instantly type the correct letter instead of having to delete the wrong letter first. NOTE: Every word has a space between themself and the next word, which has to be typed too!\nShow/Hide with shift+h"
