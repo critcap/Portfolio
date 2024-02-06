@@ -59,3 +59,5 @@ res://_Developer/Demos/DemoBoosting/BoostDisplay.cs
 res://_Developer/Demos/DemoBoosting/Booster.cs
 res://_Developer/Demos/DemoBoosting/DemoBoosting.cs
 res://_Developer/Demos/DemoBoosting/IsFireHold.cs
+res://instructions/Instructions.tscn
+res://instructions/instructions.gd

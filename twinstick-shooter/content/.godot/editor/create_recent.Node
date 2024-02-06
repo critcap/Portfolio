@@ -1,5 +1,5 @@
-TextureRect
 CanvasLayer
+TextureRect
 AnimationPlayer
 Node
 EnemySpawner
@@ -12,4 +12,3 @@ ProgressBar
 HBoxContainer
 VictorySystem
 Control
-ColorRect

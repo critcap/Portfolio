@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/SceneBattle/gui_status.gd" type="Script" id=1]
 [ext_resource path="res://assets/SceneBattle/gui_target.gd" type="Script" id=2]
 [ext_resource path="res://_developer/Demos/Battle/demo_attack.gd" type="Script" id=3]
 [ext_resource path="res://_developer/Demos/Battle/Demo_MultipleBattler.tscn" type="PackedScene" id=4]
 [ext_resource path="res://_Developer/Enviroment/demo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://instructions/Instructions.tscn" type="PackedScene" id=6]
 [ext_resource path="res://_developer/SelectDisplay.tscn" type="PackedScene" id=8]
 [ext_resource path="res://_developer/CastleMap/Castle_Geometry.tscn" type="PackedScene" id=9]
 
@@ -38,5 +39,7 @@ cell_octant_size = 64
 [node name="Control" parent="BattleController" index="22" instance=ExtResource( 8 )]
 
 [node name="TestHall" parent="." index="1" instance=ExtResource( 5 )]
+
+[node name="Instructions" parent="." index="2" instance=ExtResource( 6 )]
 
 [editable path="BattleController/CameraRig"]

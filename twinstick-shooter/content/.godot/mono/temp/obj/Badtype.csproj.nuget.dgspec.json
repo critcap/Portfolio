@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Guille\\Repositories\\Badtype\\content\\Badtype.csproj": {}
+    "C:\\Users\\Guille\\Repositories\\Portfolio\\twinstick-shooter\\content\\Badtype.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Guille\\Repositories\\Badtype\\content\\Badtype.csproj": {
+    "C:\\Users\\Guille\\Repositories\\Portfolio\\twinstick-shooter\\content\\Badtype.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Guille\\Repositories\\Badtype\\content\\Badtype.csproj",
+        "projectUniqueName": "C:\\Users\\Guille\\Repositories\\Portfolio\\twinstick-shooter\\content\\Badtype.csproj",
         "projectName": "Badtype",
-        "projectPath": "C:\\Users\\Guille\\Repositories\\Badtype\\content\\Badtype.csproj",
+        "projectPath": "C:\\Users\\Guille\\Repositories\\Portfolio\\twinstick-shooter\\content\\Badtype.csproj",
         "packagesPath": "C:\\Users\\Guille\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Guille\\Repositories\\Badtype\\content\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "C:\\Users\\Guille\\Repositories\\Portfolio\\twinstick-shooter\\content\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\Guille\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",

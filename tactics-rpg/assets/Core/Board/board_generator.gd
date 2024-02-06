@@ -20,6 +20,8 @@ static func generate_from_raw(raw_data: Dictionary) -> Dictionary:
 	for r_tile in raw_data.values():
 		if !r_tile.has("position") || !r_tile.has("translation"):
 			continue
+		if r_tile.position.y > 20:
+			continue	
 		var tile = Tile.new()
 		tile.position = r_tile.position
 		tile.translation = r_tile.translation

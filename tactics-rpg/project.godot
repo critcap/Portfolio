@@ -104,7 +104,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://assets/Core/Board/board_data.gd"
 }, {
-"base": "Reference",
+"base": "GridMap",
 "class": "BoardEditorBaker",
 "language": "GDScript",
 "path": "res://_Developer/Critcap/BoardCreator/game_board_baker.gd"
@@ -1332,8 +1332,8 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/width=1920
 window/size/height=1080
-window/size/test_width=1280
-window/size/test_height=720
+window/size/test_width=1920
+window/size/test_height=1080
 window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true
 

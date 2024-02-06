@@ -20,6 +20,7 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_43k1g"]
 
 [node name="Main" type="Node"]
+process_mode = 4
 
 [node name="VictorySystem" type="Node" parent="."]
 script = ExtResource("12_f8iqu")
@@ -50,17 +51,23 @@ ChargeRate = 1.0
 ChargeMax = 4.0
 
 [node name="Weapon" parent="Field/PlayerCharacterBase/WeaponRig" index="0"]
-Damage = 20
+Damage = 1
+AttackRate = 0.1
 
 [node name="Weapon2" parent="Field/PlayerCharacterBase/WeaponRig" index="1"]
 Range = 90000
-Damage = 20
+Damage = 1
+AttackRate = 0.1
 
 [node name="Node" type="Node" parent="Field/PlayerCharacterBase/WeaponRig/Weapon2" index="4"]
 
 [node name="CharacterController" parent="Field/PlayerCharacterBase" index="3" node_paths=PackedStringArray("Character", "Camera")]
 Character = NodePath("..")
 Camera = NodePath("../../Camera/Camera2D")
+DashMultiplier = 2.0
+DashDuration = 0.3
+SlideDrag = 100
+SlideBreakForce = 10.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Field"]
 

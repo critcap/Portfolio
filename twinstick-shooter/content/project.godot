@@ -17,7 +17,7 @@ ResourceScriptDirectories=["res://", "res://BadType/Core/"]
 [application]
 
 config/name="Badtype"
-run/main_scene="res://_Developer/Demos/DemoBoosting/DemoBoosting.tscn"
+run/main_scene="res://instructions/Instructions.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
