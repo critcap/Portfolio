@@ -9,9 +9,6 @@ Neben dem Programmieren und Videospiele koche ich sehr gerne in meiner Freizeit.
 <p>Ich denke, ich wäre eine gute Erweiterung für das Dome Keeper Team, da ich nicht nur ein motivierter Entwickler, sondern auch jemand bin, der Videospiele und den Prozess ihrer Entstehung über alles liebt.
 <p>Ich freue mich von euch zu hören.
 
-<p>Mit freundlichen Grüßen
-<p> William
-
 ## Projekte
 Die Projekte befinden sich in diesem Repository und neben der gebauten Anwendung befindet sich auch der komplette Sourcecode des Projektes im Ordner.
 
