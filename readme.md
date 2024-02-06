@@ -36,5 +36,5 @@ Mein aktuelles Projekt ist ein Ingame Map Editor der mit mit schnellen Interatio
 ![Screenshot 2024-02-06 011650](https://github.com/critcap/Portfolio/assets/39470937/64cdf290-9e38-401f-9f2e-9998eb85c939)
 
 ## Kontakte
-Email: w.m.lueck@gmail.com
-Discord: critcap
+<p>Email: w.m.lueck@gmail.com
+<p></p>Discord: critcap
