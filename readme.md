@@ -6,6 +6,11 @@ Von daher würde ich mich als Dual-Class-Mensch aus Spiele- und Qualitätsmensch
 <p>Meine Reise in die Welt des Programmierens begann in der 7. Klasse mit dem RPG Maker 2000. Gegen 2019 entschied ich mich, den RPG Maker hinter mir zu lassen und begann die Godot Engine zu nutzen. In den darauffolgenden Jahren habe ich neben kleineren Experimenten auch einige komplexere Prototypen versucht umzusetzen. Dabei konzentrierte ich mich immer auf eine Handvoll Mechaniken, die ich in anderen Spielen entdeckt habe, und versuchte, diese zu kopieren und kombinieren. Dabei war ich immer wieder von den kreativen Lösungen einiger Gamedevs begeistert.
 Ein Highlight war die eigenständige Teilnahme an verschiedenen Game Jams, bei denen ich meine Fähigkeiten als Solo-Entwickler unter Beweis stellte. Dies half mir auch zu erkennen, dass ich oft ein Scoping-Problem habe und daran arbeiten muss.</p>
 Neben dem Programmieren und Videospiele koche ich sehr gerne in meiner Freizeit.
+<p>Ich denke, ich wäre eine gute Erweiterung für das Dome Keeper Team, da ich nicht nur ein motivierter Entwickler, sondern auch jemand bin, der Videospiele und den Prozess ihrer Entstehung über alles liebt.
+<p>Ich freue mich von euch zu hören.
+
+<p>Mit freundlichen Grüßen
+<p> William
 
 ## Projekte
 Die Projekte befinden sich in diesem Repository und neben der gebauten Anwendung befindet sich auch der komplette Sourcecode des Projektes im Ordner.
@@ -35,6 +40,4 @@ Mit dem Release von Godot 4.0 wechselte ich von GDScript zu C#. Dies hatte den s
 Mein aktuelles Projekt ist ein Ingame Map Editor der mit mit schnellen Interation von Prototypen helfen soll. Fokus lag auf Abstraktion für das UI. (*Dieses Projekt ist noch nicht weitgenug, dass ich es brauchbar präsentieren könnte*)
 ![Screenshot 2024-02-06 011650](https://github.com/critcap/Portfolio/assets/39470937/64cdf290-9e38-401f-9f2e-9998eb85c939)
 
-## Kontakte
-<p>Email: w.m.lueck@gmail.com
-<p></p>Discord: critcap
+
