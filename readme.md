@@ -1,43 +1,35 @@
 
 # Portfolio
 ## Über mich
-<img align="right" width="200" alt="profile" src="https://github.com/critcap/Portfolio/assets/39470937/b76bf87d-36df-47dd-a68f-d2d86f377f1f"> o  popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line i
+<img align="right" width="200" alt="302051299-b76bf87d-36df-47dd-a68f-d2d86f377f1f" src="https://github.com/critcap/Portfolio/assets/39470937/1b8cb312-be70-410b-9402-dd41a3297108"><p> Moin! Ich bin William, 29 Jahre alt und komme aus Bremen.</p> Seit meiner Kindheit lebe ich Videospiele. Derzeit bin ich Anwendungsentwickler bei Tag und Hobby Gamedev bei Nacht. Meine Bereiche in meinem derzeitigen Beruf sind Programmierung und Qualitätssicherung. Meine Expertise erstreckt sich neben dem Umgang mit den Programmiersprachen C# und GDScript auch über Fehlerbehebung, Testing und Kundenkommunikation.
+Von daher würde ich mich als Dual-Class-Mensch aus Spiele- und Qualitätsmensch mit den verbleibenden Skill-Punkten in Kommunikation sehen.
+<p>Meine Reise in die Welt des Programmierens begann in der 7. Klasse mit dem RPG Maker 2000. Gegen 2019 entschied ich mich, den RPG Maker hinter mir zu lassen und begann die Godot Engine zu nutzen. In den darauffolgenden Jahren habe ich neben kleineren Experimenten auch einige komplexere Prototypen versucht umzusetzen. Dabei konzentrierte ich mich immer auf eine Handvoll Mechaniken, die ich in anderen Spielen entdeckt habe, und versuchte, diese zu kopieren und kombinieren. Dabei war ich immer wieder von den kreativen Lösungen einiger Gamedevs begeistert.
+Ein Highlight war die eigenständige Teilnahme an verschiedenen Game Jams, bei denen ich meine Fähigkeiten als Solo-Entwickler unter Beweis stellte. Dies half mir auch zu erkennen, dass ich oft ein Scoping-Problem habe und daran arbeiten muss.</p>
+Neben dem Programmieren und Videospiele koche ich sehr gerne in meiner Freizeit.
 
-- Anwendungsentwickler bei Tag und gamedev bei Nacht.
-- Habe mich von anderen Spielen inspirieren lassen und wollte diese nachbauen (interesse wie etwas gemacht wird)
-- Prototypen, bis ein Projekt gefunden habe womit ich als Hobby Developer zufrieden bin und die Motivation habe es in meiner Freizeit fertigzustellen.
-- Mich interessiert wie viele dinge hinter den Kulissen umgesetzt werden.
-
+## Projekte
+Die Projekte befinden sich in diesem Repository und sollten alle spielbar sein.
 
 ## RM3D (2019)
-Ich hab im Rpg Maker MV das programmieren mit JavaScript neu erlernt. Das große neue Ding für mich waren Objekte. Angefangen habe ich mit kleinen Anpassungen an Plugins und geendet hat dies in diesem Projekt. Der RPG Maker MV benutzt unter der Haube ein Framework namens PixiJS um das Spiel in 2D darzustellen. Mir ist aber irgendwann aufgefallen, dass dieses Framework auch eine 3D Library hat. Inspiriert durch das Spiel [Bravely Default] habe ich versucht die Kampfsequenzen des RPG Makers nun in 3D umzusetzen.
+Dies war mein letztes Projekt innerhalb des RPG Makers MV. Dieser nutzt hinter den Kulissen das PixiJS Framework für die grafische Darstellung. Irgendwann habe ich entdeckt, dass es auch eine PixiJS 3D Library gab, und habe dann angefangen, diese in den RPG Maker MV einzubinden. Dabei orientierte ich mich an der Kampfszene von Bravely Default.
+
 https://github.com/critcap/Portfolio/assets/39470937/96628681-a2e4-4505-92f2-fbc2a00ce44c
 
-## Card Autobattler (2021)
-- Erstes richtiges Spiel in der Godot Engine
-- Viel Fokus auf die Präsentation
-- Hoch skalierbares system.
+## Card Autobattler (2021) (GDScript) (Godot 3.X)
+Mein erstes größeres Projekt in der Godot Engine war die Nachbildung des Autobattler-Modus aus Hearthstone. Besonders hat mich die Kommunikation aus unterschiedlichen Systemen interessiert, was unglaubliche Eventketten im Spiel erlaubt. Dabei war mir auch eine gewisse Präsentation wichtig.
 
-## Isometric Tactics RPG (2022)
-- Viele Systeme die miteinander agieren.
-- Erster Versuch ein komplettes Spiel zu erstellen.
-- Mit vielen Systemen die in einerander greifen und weiterhin versucht skalierbar zu sein
-- Aus vielen Problemen auf die ich gestoßen bin gelernt mit der zeit
+## Isometric Tactics RPG (2022) (GDScript) (Godot 3.X)
+Daraufhin begann ich die Arbeit an einem größeren Projekt. Dieses Mal habe ich meine Augen auf Spiele wie Tactics Ogre und Final Fantasy: Tactics gerichtet. Nur habe ich die Komplexität dieser Spiele zuerst stark unterschätzt. Mehrmals habe ich das ganze Projekt komplett refaktoriert, weil beim Ändern eines Systems auf einmal nicht mehr funktioniert hat. Dabei lernte ich auch die Wichtigkeit von Integrationstests.
 
-## Typewriter (2022)
-- Interesse meine schreibgeschwindigkeit zu verbessern
-- Unzufriedenheit mit den Lösungen die ich im Internet gefunden habe
-- Zum ersten mal Funktion über Präsentation
+## Typewriter (2022) (GDScript) (Godot 3.X)
+Das nächste Projekt war ein harter Schnitt zu dem, was ich zuvor gemacht hatte. Es sollte einen Typewriter wie [dieser](https://10fastfingers.com/typing-test/english) werden. Dies hatte den simplen Grund, dass ich meine Typing Skills verbessern wollte und unzufrieden mit den Lösungen war die ich online gefunden habe. Zum ersten mal war mir die Funktion wichtiger als die Präsentation Präsentation. Daher habe ich mich für eine simplen Terminal Look entschieden.
 
-## Twinstick Shooter (2023)
-- Hat als Kopie von Brotatoe angefangen
-- Dachte eine Boostfunktion wäre interessant
-- Neue Herangehensweise bei der Programmierung: Ergebnisse bevor mal skalieren möchte
+## Twinstick Shooter (2023) (C#.Net) (Godot 4+)
+Mit dem Release von Godot 4.0 wechselte ich von GDScript zu C#. Dies hatte den simplen Grund, meine Kenntnisse der Sprache auch neben der Arbeit zu erweitern. Dieser Prototyp begann als Klon von Brotato, entwickelte sich dann aber eher in Richtung eines Twin-Stick-Shooters, da ich aus anderen Spielen die Boost Funktion nachbauen wollte.(Die Grafiken sind nicht selbst gemacht, sondern stammen von [diesem Künstler](https://trevor-pupkin.itch.io/tech-dungeon-roguelite)).
 
-## Ingame Mapeditor (2023-2024)
-- Für schnellere Iterationen
-- Viel UI integration und abstraktion
+## Ingame Mapeditor (2023-2024) (C#.Net) (Godot 4+)
+Mein aktuelles Projekt ist ein Ingame Map Editor der mit mit schnellen Interation von Prototypen helfen soll. Fokus lag auf Abstraktion für das UI.
 
-## Links
 ## Kontakte
-
+Email: w.m.lueck@gmail.com
+Discord: critcap
