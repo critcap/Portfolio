@@ -1,14 +1,3 @@
-
-# Portfolio
-## Über mich
-<img align="right" width="200" alt="302051299-b76bf87d-36df-47dd-a68f-d2d86f377f1f" src="https://github.com/critcap/Portfolio/assets/39470937/1b8cb312-be70-410b-9402-dd41a3297108">Moin! Ich bin William, 29 Jahre alt und komme aus Bremen. Seit meiner Kindheit lebe ich Videospiele. Derzeit bin ich Anwendungsentwickler bei Tag und Hobby Gamedev bei Nacht. Meine Bereiche in meinem derzeitigen Beruf sind Programmierung und Qualitätssicherung. Meine Expertise erstreckt sich neben dem Umgang mit den Programmiersprachen C# und GDScript auch über Fehlerbehebung, Testing und Kundenkommunikation.
-Von daher würde ich mich als Dual-Class-Mensch aus Spiele- und Qualitätsmensch mit den verbleibenden Skill-Punkten in Kommunikation sehen.
-<p>Meine Reise in die Welt des Programmierens begann in der 7. Klasse mit dem RPG Maker 2000. Gegen 2019 entschied ich mich, den RPG Maker hinter mir zu lassen und begann die Godot Engine zu nutzen. In den darauffolgenden Jahren habe ich neben kleineren Experimenten auch einige komplexere Prototypen versucht umzusetzen. Dabei konzentrierte ich mich immer auf eine Handvoll Mechaniken, die ich in anderen Spielen entdeckt habe, und versuchte, diese zu kopieren und kombinieren. Dabei war ich immer wieder von den kreativen Lösungen einiger Gamedevs begeistert.
-Ein Highlight war die eigenständige Teilnahme an verschiedenen Game Jams, bei denen ich meine Fähigkeiten als Solo-Entwickler unter Beweis stellte. Dies half mir auch zu erkennen, dass ich oft ein Scoping-Problem habe und daran arbeiten muss.</p>
-Neben dem Programmieren und Videospiele koche ich sehr gerne in meiner Freizeit.
-<p>Ich denke, ich wäre eine gute Erweiterung für das Dome Keeper Team, da ich nicht nur ein motivierter Entwickler, sondern auch jemand bin, der Videospiele und den Prozess ihrer Entstehung über alles liebt.
-<p>Ich freue mich von euch zu hören.
-
 ## Projekte
 Die Projekte befinden sich in diesem Repository und neben der gebauten Anwendung befindet sich auch der komplette Sourcecode des Projektes im Ordner.
 
